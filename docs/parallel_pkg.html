@@ -9,7 +9,7 @@
 <meta name="author" content="George G. Vega Yon, Ph.D.">
 <meta name="dcterms.date" content="2025-08-14">
 
-<title>The parallel R package – Efficient Programming with R: A Workshop</title>
+<title>The parallel R package – Advanced R Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -122,7 +122,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <img src="./logo.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Efficient Programming with R: A Workshop</span>
+    <span class="navbar-title">Advanced R Programming</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -216,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#exercise-overhead-costs" id="toc-exercise-overhead-costs" class="nav-link" data-scroll-target="#exercise-overhead-costs">Exercise: Overhead costs</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/EpiForeSITE/efficient-r-foresite/edit/main/parallel_pkg.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/EpiForeSITE/efficient-r-foresite/blob/main/parallel_pkg.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UofUDELPHI/20261100-adv_r/edit/main/parallel_pkg.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UofUDELPHI/20261100-adv_r/blob/main/parallel_pkg.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -495,9 +495,9 @@ integer overflows</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Unit: milliseconds
-     expr      min        lq      mean    median        uq       max neval
-   serial  364.859  377.0944  400.9552  399.6909  417.0765  472.7684    10
- parallel 1239.990 1322.1260 1401.6740 1436.9526 1471.8845 1531.0783    10</code></pre>
+     expr       min        lq      mean    median       uq       max neval
+   serial  370.0829  387.6258  416.4014  412.2651  443.811  477.3256    10
+ parallel 1302.7103 1358.1617 1408.5180 1414.3330 1437.407 1591.6240    10</code></pre>
 </div>
 </div>
 <p>From the comparison, we can see that the parallel version is significantly slower than the serial version. Two things to note here are (a) the task we are running is already fast (about 0.3 seconds on average for the serial run) and (b) there is an overhead cost associated with creating, preparing, and stopping the cluster. As we mentioned earlier, parallel optimizations only make sense if your code is already talking a significant amount of time, making the overhead cost associated with the setup relatively small. The following implementation of the function should make it significantly faster:</p>
@@ -557,8 +557,8 @@ integer overflows</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>Unit: milliseconds
      expr       min       lq     mean   median       uq      max neval
-   serial 339.13429 343.8196 376.7939 363.3572 393.6694 475.9597    10
- parallel  96.69506  98.3918 110.6199 107.1158 118.9023 135.3168    10</code></pre>
+   serial 357.84542 386.2114 409.8269 395.0364 404.9950 578.7929    10
+ parallel  98.20041 100.9171 115.2487 110.9535 133.6062 136.9356    10</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We need to stop the cluster</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopCluster</span>(cl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -675,11 +675,11 @@ Caution
 <span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>ans <span class="ot">&lt;-</span> <span class="fu">do.call</span>(cbind, <span class="fu">mclapply</span>(<span class="dv">1</span><span class="sc">:</span>nnodes, <span class="cf">function</span>(x) <span class="fu">runif</span>(nsims)))</span>
 <span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>(ans0 <span class="ot">&lt;-</span> <span class="fu">var</span>(ans))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>             [,1]          [,2]         [,3]          [,4]
-[1,] 0.0855343139  1.818837e-03 1.884180e-03  0.0001954201
-[2,] 0.0018188371  8.297611e-02 1.418663e-05 -0.0013661037
-[3,] 0.0018841803  1.418663e-05 8.044551e-02  0.0042199417
-[4,] 0.0001954201 -1.366104e-03 4.219942e-03  0.0825423038</code></pre>
+<pre><code>             [,1]          [,2]          [,3]          [,4]
+[1,]  0.084918209 -0.0031421153  0.0018527358 -0.0010697658
+[2,] -0.003142115  0.0854694877 -0.0005553091  0.0052735608
+[3,]  0.001852736 -0.0005553091  0.0817167841 -0.0006622197
+[4,] -0.001069766  0.0052735608 -0.0006622197  0.0851134570</code></pre>
 </div>
 </div>
 <p>Once more, we want to make sure this is reproducible</p>
@@ -689,11 +689,11 @@ Caution
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>ans1 <span class="ot">&lt;-</span> <span class="fu">var</span>(<span class="fu">do.call</span>(cbind, <span class="fu">mclapply</span>(<span class="dv">1</span><span class="sc">:</span>nnodes, <span class="cf">function</span>(x) <span class="fu">runif</span>(nsims))))</span>
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>ans0 <span class="sc">-</span> ans1 <span class="co"># A matrix of zeros</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>             [,1]          [,2]         [,3]         [,4]
-[1,] -0.004179373  0.0011362932  0.004144171 3.573133e-03
-[2,]  0.001136293 -0.0040557568  0.001339580 8.442004e-04
-[3,]  0.004144171  0.0013395796 -0.002173317 3.433620e-03
-[4,]  0.003573133  0.0008442004  0.003433620 4.073255e-05</code></pre>
+<pre><code>              [,1]         [,2]          [,3]          [,4]
+[1,] -0.0020320384 0.0015893915  6.164758e-04 -2.478574e-03
+[2,]  0.0015893915 0.0007625405  9.410214e-04  5.849171e-03
+[3,]  0.0006164758 0.0009410214 -1.148884e-03  4.598675e-05
+[4,] -0.0024785736 0.0058491714  4.598675e-05  5.082166e-03</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. STOP THE CLUSTER</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># stopCluster(cl) no need of doing this anymore</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -750,7 +750,7 @@ Caution
 
 </section>
 
-<p><text style="text-align:center">ForeSITE</text></p></main> <!-- /main -->
+<p><text style="text-align:center">DELPHI</text></p></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1173,4 +1173,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/EpiForeSITE/efficient-r-foresite/edit/main/parallel_pkg.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/EpiForeSITE/efficient-r-foresite/blob/main/parallel_pkg.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UofUDELPHI/20261100-adv_r/edit/main/parallel_pkg.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UofUDELPHI/20261100-adv_r/blob/main/parallel_pkg.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>

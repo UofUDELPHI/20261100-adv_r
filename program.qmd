@@ -1,25 +1,35 @@
 ---
 title: "Program"
-date: 2025-07-09
-date-modified: 2025-08-15
+date: 2026-03-24
+date-modified: 2026-03-24
 ---
 
-This half-day workshop will focus on practical techniques for writing efficient R code. Participants will learn about vectorization, parallel computing, and specialized packages to dramatically improve their R code performance. The session will include hands-on exercises and real-world examples.
+This page outlines the current draft of the DELPHI "Advanced Programming with R" workshop program.
 
-## Plan
+The program below is still being developed and is subject to change. Not all content has been created yet, and sections marked with `[TO BE DEFINED]` are placeholders for upcoming materials.
 
-The first two hours of the workshop will cover the following topics:
+## Day 1
 
-1. Profiling ([Profiling](profiling.qmd))
+1. **Fundamentals**  
+   Technical aspects of writing functions, scoping rules, and environments in R.
 
-2. Writing efficient code ([Efficiency](efficiency.qmd))
+2. **Code Profiling and Debugging**  
+   Tools and techniques for identifying bottlenecks and debugging R code ([Code Profiling and Debugging](profiling.qmd)).
 
-3. The data.table package ([Data.Table](data.table.qmd))
+3. **Writing Simulation Functions**  
+   Using simulations to generate data and illustrate performance optimization strategies `[TO BE DEFINED]`
 
-4. Parallel computing in R ([Parallel computing in R](parallel.qmd) and the [parallel package](parallel_pkg.qmd))
+## Day 2
 
-The last hour will be dedicated to looking into the participants' specific use cases and challenges, providing tailored advice and solutions. Much of the content will be driven by the participants' needs and questions, and due to the time constraints, we will most likely skip some sections of the lectures.
+4. **Introduction to Writing R Packages**  
+   Overview of package structure and pointers for building R packages `[TO BE DEFINED]`
 
-## Resources and Git Materials
+5. **Parallel Computing**  
+   Speeding up R code using parallel and distributed computing (see also: <https://book-hpc.ggvy.cl>) ([Parallel computing](parallel.qmd))
 
-The workshop will utilize materials from the `git` folder for version control best practices when working with performance-critical code. Additional resources and example datasets will be provided during the workshop.
+6. **Using C++ with R**  
+   When and how to accelerate R code with C++ via Rcpp or cpp11 `[TO BE DEFINED]`
+
+## Notes
+
+The detailed schedule for each day is still being defined. As materials are developed, links will be added to the relevant sections and placeholders will be replaced with full content.
