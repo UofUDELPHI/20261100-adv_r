@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-07-09">
+<meta name="dcterms.date" content="2026-03-24">
 
-<title>Program – Efficient Programming with R: A Workshop</title>
+<title>Program – Advanced R Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
     <img src="./logo.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Efficient Programming with R: A Workshop</span>
+    <span class="navbar-title">Advanced R Programming</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -164,10 +164,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#plan" id="toc-plan" class="nav-link active" data-scroll-target="#plan">Plan</a></li>
-  <li><a href="#resources-and-git-materials" id="toc-resources-and-git-materials" class="nav-link" data-scroll-target="#resources-and-git-materials">Resources and Git Materials</a></li>
+  <li><a href="#day-1" id="toc-day-1" class="nav-link active" data-scroll-target="#day-1">Day 1</a></li>
+  <li><a href="#day-2" id="toc-day-2" class="nav-link" data-scroll-target="#day-2">Day 2</a></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/EpiForeSITE/efficient-r-foresite/edit/main/program.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/EpiForeSITE/efficient-r-foresite/blob/main/program.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UofUDELPHI/20261100-adv_r/edit/main/program.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UofUDELPHI/20261100-adv_r/blob/main/program.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -185,14 +186,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 9, 2025</p>
+      <p class="date">March 24, 2026</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 15, 2025</p>
+      <p class="date-modified">March 24, 2026</p>
     </div>
   </div>
     
@@ -203,26 +204,38 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This half-day workshop will focus on practical techniques for writing efficient R code. Participants will learn about vectorization, parallel computing, and specialized packages to dramatically improve their R code performance. The session will include hands-on exercises and real-world examples.</p>
-<section id="plan" class="level2">
-<h2 class="anchored" data-anchor-id="plan">Plan</h2>
-<p>The first two hours of the workshop will cover the following topics:</p>
+<p>This page outlines the current draft of the DELPHI “Advanced Programming with R” workshop program.</p>
+<p>The program below is still being developed and is subject to change. Not all content has been created yet, and sections marked with <code>[TO BE DEFINED]</code> are placeholders for upcoming materials.</p>
+<section id="day-1" class="level2">
+<h2 class="anchored" data-anchor-id="day-1">Day 1</h2>
 <ol type="1">
-<li><p>Profiling (<a href="./profiling.html">Profiling</a>)</p></li>
-<li><p>Writing efficient code (<a href="./efficiency.html">Efficiency</a>)</p></li>
-<li><p>The data.table package (<a href="./data.table.html">Data.Table</a>)</p></li>
-<li><p>Parallel computing in R (<a href="./parallel.html">Parallel computing in R</a> and the <a href="./parallel_pkg.html">parallel package</a>)</p></li>
+<li><p><strong>Fundamentals</strong><br>
+Technical aspects of writing functions, scoping rules, and environments in R.</p></li>
+<li><p><strong>Code Profiling and Debugging</strong><br>
+Tools and techniques for identifying bottlenecks and debugging R code (<a href="./profiling.html">Code Profiling and Debugging</a>).</p></li>
+<li><p><strong>Writing Simulation Functions</strong><br>
+Using simulations to generate data and illustrate performance optimization strategies <code>[TO BE DEFINED]</code></p></li>
 </ol>
-<p>The last hour will be dedicated to looking into the participants’ specific use cases and challenges, providing tailored advice and solutions. Much of the content will be driven by the participants’ needs and questions, and due to the time constraints, we will most likely skip some sections of the lectures.</p>
 </section>
-<section id="resources-and-git-materials" class="level2">
-<h2 class="anchored" data-anchor-id="resources-and-git-materials">Resources and Git Materials</h2>
-<p>The workshop will utilize materials from the <code>git</code> folder for version control best practices when working with performance-critical code. Additional resources and example datasets will be provided during the workshop.</p>
+<section id="day-2" class="level2">
+<h2 class="anchored" data-anchor-id="day-2">Day 2</h2>
+<ol start="4" type="1">
+<li><p><strong>Introduction to Writing R Packages</strong><br>
+Overview of package structure and pointers for building R packages <code>[TO BE DEFINED]</code></p></li>
+<li><p><strong>Parallel Computing</strong><br>
+Speeding up R code using parallel and distributed computing (see also: <a href="https://book-hpc.ggvy.cl" class="uri">https://book-hpc.ggvy.cl</a>) (<a href="./parallel.html">Parallel computing</a>)</p></li>
+<li><p><strong>Using C++ with R</strong><br>
+When and how to accelerate R code with C++ via Rcpp or cpp11 <code>[TO BE DEFINED]</code></p></li>
+</ol>
+</section>
+<section id="notes" class="level2">
+<h2 class="anchored" data-anchor-id="notes">Notes</h2>
+<p>The detailed schedule for each day is still being defined. As materials are developed, links will be added to the relevant sections and placeholders will be replaced with full content.</p>
 
 
 </section>
 
-<p><text style="text-align:center">ForeSITE</text></p></main> <!-- /main -->
+<p><text style="text-align:center">DELPHI</text></p></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -645,4 +658,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/EpiForeSITE/efficient-r-foresite/edit/main/program.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/EpiForeSITE/efficient-r-foresite/blob/main/program.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UofUDELPHI/20261100-adv_r/edit/main/program.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UofUDELPHI/20261100-adv_r/blob/main/program.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>

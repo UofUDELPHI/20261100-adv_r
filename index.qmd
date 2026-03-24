@@ -1,54 +1,54 @@
 ---
 title: "Welcome!"
-date: 2025-07-09
-date-modified: 2025-07-09
+date: 2026-03-24
+date-modified: 2026-03-24
 ---
 
 ![Attendees during the morning session led by Andrew Redd (Photo by George G Vega Yon)](live.png){width=80%}
 
 ## About the workshop
 
-Efficient programming is crucial for working with large datasets and complex analyses in R. This half-day workshop is designed to teach practical techniques for improving R code performance through vectorization, parallel computing, and specialized packages like data.table. Participants will learn how to identify bottlenecks in their code and apply appropriate optimization strategies to dramatically improve performance.
+This repository contains the materials for the DELPHI "Advanced Programming with R" workshop, scheduled for November.
 
+This two-day workshop, supported by DELPHI, covers advanced topics in R programming. Participants will deepen their understanding of the R language and learn techniques for writing faster, more robust, and more maintainable R code.
 
 ### Time and location
 
-The workshop will take place on Friday August 15th, 2025 at 9am-1pm MT. More details will be provided to registered attendees.
+This program is not final. Content and schedule are still being defined, and we are planning to start advertising in April. Specific dates, times, and location details will be shared once the workshop schedule is finalized.
 
-### What are good use cases for efficient R programming?
+### Topics we plan to cover
 
--	You work with large datasets that take a long time to process
--	Your R scripts run slowly and you need to optimize performance
--	You want to learn about vectorization techniques to replace slow loops
--	You're interested in parallel computing to utilize multiple CPU cores
--	You want to master data.table for fast data manipulation
--	You need to process data that doesn't fit in memory efficiently
--	You want to benchmark and profile your R code to identify bottlenecks
+- **Fundamentals**: Functions, scoping rules, and environments in R
+- **Code Profiling and Debugging**: Identifying and fixing bottlenecks in R code
+- **Writing Simulation Functions**: Using simulations as a unit of work to illustrate performance and code design
+- **R Package Development**: Structure and best practices for building R packages
+- **Parallel Computing**: Leveraging multiple cores and distributed resources for faster computation
+- **Using C++ with R**: Accelerating R code with C++ via Rcpp or cpp11
 
 ### Who should attend?
 
-R programming users with intermediate experience who want to improve their code's performance. 
+R users with strong prior experience who want to go beyond day-to-day scripting and build a deeper understanding of how the language works, how to improve performance, and how to write more maintainable code.
 
 ### What level of programming should attendees have?
 
-Attendees should have solid experience using the R programming language, including writing functions, working with data frames, and basic data manipulation using tools like dplyr, base R, or data.table. Some familiarity with loops and apply functions would be helpful.
+Participants should already be comfortable writing R code and working independently in the language. In particular, the workshop assumes:
 
+- Strong experience with the R programming language beyond basic data manipulation
+- Comfort writing functions, working with environments, and applying functional programming patterns
+- Some familiarity with performance concepts such as loops, vectorization, and memory usage
+- No prior experience with C++ or package development is required, but general programming maturity is expected
 
 ### What tools will be used during the workshop?
 
-Besides the R programming language, we will be using RStudio. Participants should have R and RStudio installed on their laptops. We will also cover specialized packages including:
+Besides the R programming language, we will be using RStudio. Participants should have R and RStudio installed on their laptops. Additional package requirements will be shared before the workshop.
 
-- **data.table** for fast data manipulation
-- **parallel** for parallel computing
-- **microbenchmark** and **profvis** for performance measurement
+### Program
+
+The program is currently a draft and subject to change. A more detailed agenda is available on the [Program](program.qmd) page, with placeholders marking sections that are still being developed.
 
 ## Registration
 
-For registration, please reach out to your ForeSITE contact. You can also email us at <george.vegayon@utah.edu>.
-
-## Funding
-
-This workshop is organized by ForeSITE using funds from the CDC's Center for Forecasting and Outbreak Analytics (CFA) (Award number 1U01CK000585; 75D30121F00003).
+Registration details will be shared once advertising begins.
 
 ## AI Disclaimer
 

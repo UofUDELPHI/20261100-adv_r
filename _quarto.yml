@@ -4,9 +4,9 @@ project:
   
 
 website:
-  title: "Efficient Programming with R: A Workshop"
-  body-footer: <text style="text-align:center">ForeSITE</text>
-  repo-url: https://github.com/EpiForeSITE/efficient-r-foresite
+  title: "Advanced R Programming"
+  body-footer: <text style="text-align:center">DELPHI</text>
+  repo-url: https://github.com/UofUDELPHI/20261100-adv_r
   repo-actions: [edit, source]
   navbar:
     logo: logo.png
